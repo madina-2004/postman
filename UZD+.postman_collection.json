@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "1a7fd0df-4124-46c6-a215-6f491dedcac2",
+		"name": "UZD+",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29741738"
+	},
+	"item": [
+		{
+			"name": "EXAM",
+			"item": [
+				{
+					"name": "users check phone",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"jsonrpc\": \"2.0\"\n\"success\":\"true\"\n\"totp\": \"null\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{payme}}/api/{{phone number}}"
+					},
+					"response": []
+				},
+				{
+					"name": "merchants",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"method\": \"merchants.get_merchants_by_type\"\n\"limit\": \"0\"\n\"offset\": \"0\"\n\"type\": \"50\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{payme}}/api/{{payme}}"
+					},
+					"response": []
+				},
+				{
+					"name": "recover password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"method\": \"users.recover_password\"\n\"code\": \"484800\"\n\"login\": \"909065551\"\n\"password\": \"Ab712681799\"\n\"to_reserve\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{payme}}/api/users.recover_password"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SEARCHE/API",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "user_balance",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "choise country",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"followRedirects": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"show_disabled_items\": true,\n\"show_title\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test.api.spec.uzdigital.tv/v1/megogo/catalog/filters?show_disabled_items=true&show_title=true",
+					"protocol": "https",
+					"host": [
+						"test",
+						"api",
+						"spec",
+						"uzdigital",
+						"tv"
+					],
+					"path": [
+						"v1",
+						"megogo",
+						"catalog",
+						"filters"
+					],
+					"query": [
+						{
+							"key": "show_disabled_items",
+							"value": "true"
+						},
+						{
+							"key": "show_title",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"jsonrpc\": \"2.0\",\n\"method\": \"users.check_phone\",\n\"params\": {\"phone\": \"909065551\"}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://{{check phone}}"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "user balance",
+			"value": "est.api.spec.uzdigital.tv/v1/user-balance"
+		},
+		{
+			"key": "1",
+			"value": "e7aae544-6094-496e-b647-8b7b82ccf51e"
+		},
+		{
+			"key": "2",
+			"value": "6500864bcb36270a0ae6b696&profile"
+		},
+		{
+			"key": "check phone",
+			"value": "payme.uz/api/users.check_phone"
+		}
+	]
+}
